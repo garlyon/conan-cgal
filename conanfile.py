@@ -4,7 +4,7 @@ import os
 
 class CgalConan(ConanFile):
     name = "CGAL"
-    version = "4.12"
+    version = "4.12.0"
     license = "GPL/LGPL"
     url = "git@github.com:garlyon/conan-cgal.git"
     description = "Computational Geometry Algorithms Library"
@@ -17,10 +17,7 @@ class CgalConan(ConanFile):
         "url": "https://github.com/CGAL/cgal.git",
         "revision": "releases/CGAL-4.12"
     }
-    requires = (
-        "boost/[>=1.67.0]@conan/stable",
-        "CGAL-headers/4.12@garlyon/testing"
-    )
+    requires = "CGAL-headers/{}@grif/stable".format(version)
 
     def build(self):
         cmake = CMake(self)

@@ -1,12 +1,15 @@
 # conan-cgal
 
 ## Create package localy
-Static libraries
 
-`conan create . grif/stable --keep-source && conan create . grif/stable --keep-source --settings build_type=Debug`
+Without GMP/MPFR
 
-Shared libraries
+`conan create . grif/dev`
 
-`conan create . grif/stable --keep-source --options shared=True && conan create . grif/stable --keep-source --options shared=True --settings build_type=Debug`
+With GMP/MPFR
 
-Requires [CGAL-headers Conan packge](https://github.com/garlyon/conan-cgal-headers)
+`conan create . grif/dev -o cgal:with_gmp=True`
+
+Note: only shared gmp/mpfr working on Windows so far
+
+`conan create . grif/dev -o cgal:with_gmp=True -o gmp:shared=True -o mpfr:shared=True`

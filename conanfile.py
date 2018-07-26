@@ -28,6 +28,7 @@ class CgalConan(ConanFile):
             cmake = CMake(self)
             cmake.definitions["BOOST_ROOT"] = self.deps_cpp_info["boost"].rootpath
             cmake.definitions["CGAL_DISABLE_GMP"] = "OFF" if self.options.with_gmp else "ON"
+            cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE"] = "True"
             cmake.configure()
             cmake.build()
             cmake.install()

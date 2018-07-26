@@ -9,7 +9,7 @@ typedef K::Point_2 Point_2;
 typedef std::vector<Point_2> Points;
 
 
-void (::vector_convex_hull_2)()
+void vector_convex_hull_2()
 {
   Points points, result;
   points.push_back(Point_2(0,0));

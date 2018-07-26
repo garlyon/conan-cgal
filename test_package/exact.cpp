@@ -6,7 +6,7 @@
 typedef CGAL::Exact_predicates_exact_constructions_kernel Kernel;
 typedef Kernel::Point_2 Point_2;
 
-void (::exact)()
+void exact()
 {
   Point_2 p(0, 0.3), q, r(2, 0.9);
   {
